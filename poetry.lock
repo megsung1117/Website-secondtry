@@ -70,6 +70,16 @@ files = [
 ]
 
 [[package]]
+name = "jason"
+version = "0.1.7"
+description = "Lightweight helpers for views returning json data in Django."
+optional = false
+python-versions = "*"
+files = [
+    {file = "jason-0.1.7.tar.gz", hash = "sha256:ebb3a47bba158161488ee8ca80f927487b0b3261f80a235f4130bcf438eea454"},
+]
+
+[[package]]
 name = "jinja2"
 version = "3.1.2"
 description = "A very fast and expressive template engine."
@@ -175,4 +185,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "8423deabc2bbdc7a7533a22d14c97ab8da16c2080acd0ecde5edd78e652454f3"
+content-hash = "7b424d4d71ea5846f516f3e825f4a5a1b3161009cf5621c95c2e34be5902b5d3"
