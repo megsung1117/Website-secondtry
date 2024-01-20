@@ -1,18 +1,21 @@
 <div class="border-bottom row" style="margin-bottom:16px;padding-bottom:8px">
   <div class="col-10">
-    <a href="http://www.google.com">
+    
       <h4 
         style="color:rgb(120,120,120); margin-bottom:4px;">
         {{job['title']}}
       </h4>
-    </a>
-    <div>Location:{{job['location']}}</div>
-    <div>Salary:{{job['salary']}}</div>
+    
+      <div>Location:{{job['location']}}</div>
+      <div>Salary:{{job['salary']}}</div>
   </div> 
+  
   <div class="col-2">
-    <button type="button" class="btn btn-outline-primary">
-    Apply
-    </button>
+    <a href="/job/{{job['id']}}">
+      <button type="button" class="btn btn-outline-primary">
+      Apply
+      </button>
+    </a>
   </div>
   
 </div>
