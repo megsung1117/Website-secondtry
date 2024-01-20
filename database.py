@@ -1,21 +1,19 @@
 import sqlite3
 
-conn = sqlite3.connect('mydatabase.db')
-cursor = conn.cursor()
-
-# cursor.execute("UPDATE jobs SET requirements = 'The core concept of i-Buzz is a data-driven marketing strategy, developed through online corpus observation and mash-up data research to provide customers with in-depth data analysis results. In addition, through self-operated digital products, we want to mine user behavior data and provide a better product experience ' WHERE id=2")
+# conn = sqlite3.connect('mydatabase.db')
+# cursor = conn.cursor()
 
 
-# conn.commit()
+# # cursor.execute("ALTER TABLE jobs ADD COLUMN status boolean")
 
 
-cursor.execute("UPDATE jobs SET requirements ='1. Analyze, design and implement systems and software, sometimes debugging.\n2. Skilled with Angular 10 or above.\n3. Familiar with Restful API integration is a must.\n4. Work with the engineers to solve frontend issues.' WHERE id = 4")
+# # cursor.execute("UPDATE jobs SET requirements ='1. Analyze, design and implement systems and software, sometimes debugging.\n2. Skilled with Angular 10 or above.\n3. Familiar with Restful API integration is a must.\n4. Work with the engineers to solve frontend issues.' WHERE id = 4")
 
-conn.commit()
-cursor.execute("SELECT * FROM jobs ")
-rows = cursor.fetchall()
-print(rows)
-conn.close()
+# # conn.commit()
+# cursor.execute("SELECT * FROM jobs ")
+# rows = cursor.fetchall()
+# print(rows)
+# conn.close()
 
 
 def job_upload_from_db():
@@ -52,8 +50,15 @@ def add_job(job_dict):
   conn = sqlite3.connect('mydatabase.db')
   cursor = conn.cursor()
   cursor.execute("INSERT INTO jobs (title, responsibility, requirements, salary, location) VALUES (?,?,?,?,?)", (job_dict['title'], job_dict['responsibility'], job_dict['requirements'], job_dict['salary'], job_dict['location']))
-  
+   
   conn.commit()         
   conn.close()
   return cursor.lastrowid
   
+def add_application_to_db(id):
+  conn = sqlite3.connect('mydatabase.db')
+  cursor = conn.cursor()
+  cursor.execute("UPDATE jobs SET status = True WHERE id = ?", (id,))
+  conn.commit()
+  conn.close()
+  return True

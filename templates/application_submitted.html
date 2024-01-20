@@ -1,0 +1,24 @@
+{% include 'base.html' %}
+{% include 'banner.html' %}
+<html>
+  <head>
+  <title></title>
+  </head>
+<body>
+  <h4>Your Application of role <b>{{job['title']}}</b> has submiited </h4>
+  <b>Full Name</b>
+  <div  class='mb-2'>{{application['full_name']}}</div>
+
+  <b>email</b>
+  <div  class='mb-2'>{{application['email']}}</div>
+
+  <b>Phone Number</b>
+  <div  class='mb-2'>{{application['phone']}}</div>
+
+  <b>Education</b>
+  <div  class='mb-2'>{{application['education']}}</div>
+
+  <b>Work Expereience </b>
+  <div  class='mb-2'>{{application['work_expereience']}}</div>
+</body>
+</html>
